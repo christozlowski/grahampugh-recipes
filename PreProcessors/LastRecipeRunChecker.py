@@ -36,7 +36,6 @@ class LastRecipeRunChecker(Processor):
         "cache_dir": {
             "description": "Path to the cache dir.",
             "required": False,
-            "default": "~/Library/AutoPkg/Cache",
         },
         "info_file": {
             "description": ("Name of input file."),
@@ -90,7 +89,7 @@ class LastRecipeRunChecker(Processor):
 
     def main(self):
         identifier = self.env.get("recipeoverride_identifier")
-        cache_dir = os.path.expanduser(self.env.get("cache_dir"))
+        cache_dir = os.path.expanduser(self.env.get("cache_dir")) or os.path.expanduser(self.env.get("CACHE_DIR"))
         info_file = self.env.get("info_file")
 
         # make sure all the values were obtained from the file

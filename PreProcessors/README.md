@@ -21,7 +21,6 @@ An AutoPkg pre-processor which reads the output from the `LastRecipeRunResult` p
 
   - **required:** False
   - **description:** Path to the cache dir.
-  - **default:** `~/Library/AutoPkg/Cache`
 
 - **info_file:**
 
